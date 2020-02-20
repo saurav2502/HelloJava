@@ -127,16 +127,16 @@ public class BSTapp {
 
     public TreeNode findInorderParent(TreeNode node, int data) {
         TreeNode retnode = null;
-        if (node == null){
+        if (node == null) {
             return null;
-        }else {
-            while (node != null){
-                if (data > node.data){
+        } else {
+            while (node != null) {
+                if (data > node.data) {
                     node = node.right;
-                }else if (data < node.data){
+                } else if (data < node.data) {
                     retnode = node;
                     node = node.left;
-                }else {
+                } else {
                     break;
                 }
             }
@@ -147,24 +147,24 @@ public class BSTapp {
 
     public TreeNode findInorderSuccessor(TreeNode node, int data) {
         TreeNode retnode = null;
-        if (node == null){
+        if (node == null) {
             return null;
-        }else {
-            while (node != null){
-                if (data > node.data){
+        } else {
+            while (node != null) {
+                if (data > node.data) {
                     node = node.right;
-                }else if (data < node.data){
+                } else if (data < node.data) {
                     retnode = node;
                     node = node.left;
-                }else {
-                    if (node.right != null){
+                } else {
+                    if (node.right != null) {
                         retnode = getsuccessor(node);
                     }
                     break;
                 }
             }
         }
-        return node != null? retnode : null;
+        return node != null ? retnode : null;
     }
 
     public int findOddEvenSumDiff(TreeNode node) {
@@ -175,10 +175,10 @@ public class BSTapp {
     }
 
     public int findMaxElement(TreeNode node) {
-        if (node == null){
+        if (node == null) {
             return 0;
-        }else {
-            while (node.right != null){
+        } else {
+            while (node.right != null) {
                 node = node.right;
             }
             return node.data;
@@ -186,13 +186,29 @@ public class BSTapp {
     }
 
     public int findMinElement(TreeNode node) {
-        if (node == null){
+        if (node == null) {
             return 0;
-        }else {
-            while (node.left != null){
+        } else {
+            while (node.left != null) {
                 node = node.left;
             }
             return node.data;
         }
+    }
+
+
+    public TreeNode findRightNode(TreeNode node) {
+        if (node == null) {
+            return null;
+        } else {
+            if (node.left != null) {
+                node.left = findRightNode(node.left);
+            }
+            System.out.print(node.data + " ");
+            if (node.right != null) {
+                node.right = findRightNode(node.right);
+            }
+        }
+        return node;
     }
 }

@@ -14,17 +14,18 @@ public class TreeRunner {
         node = bsTapp.insertNode(node, 4);
         node = bsTapp.insertNode(node, 6);
         node = bsTapp.insertNode(node, 7);
-        //node = bsTapp.deleteNode(node,8);
+        node = bsTapp.deleteNode(node,8);
+        bsTapp.findRightNode(node);
         //node = bsTapp.inOrderTraverse(node);
-        /*node = bsTapp.findParent(node, 3);
-        if (node != null) {
+        //node = bsTapp.findParent(node, 8);
+        /*if (node != null) {
             System.out.println();
             System.out.println("parent of 81 is = " + node.data);
         } else {
             System.out.println();
             System.out.println("parent does not exist");
         }*/
-        /*node = bsTapp.findSibling(node, 13);
+        /*node = bsTapp.findSibling(node, 4);
         if (node == null) {
             System.out.println();
             System.out.println("not exist");
@@ -42,7 +43,7 @@ public class TreeRunner {
             System.out.println("Inorder Parent: "+node.data);
         }*/
         /*System.out.println(bsTapp.findOddEvenSumDiff(node));*/
-        System.out.println(bsTapp.findMaxElement(node));
-        System.out.println(bsTapp.findMinElement(node));
+        //System.out.println(bsTapp.findMaxElement(node));
+        //System.out.println(bsTapp.findMinElement(node));
     }
 }

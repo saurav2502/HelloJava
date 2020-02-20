@@ -151,7 +151,7 @@ public class LinkedListApp {
         while(temp.next != null){
             temp = temp.next;
         }
-        temp.next = node;
+        temp.next = root;
         return head;
     }
 
@@ -161,7 +161,8 @@ public class LinkedListApp {
         }else {
             Node revlist = reverseList(root.next);
             printRoot(revlist);
-            System.out.print("["+root.data+"]"+" -> ");
+            System.out.println();
+           // System.out.print("["+root.data+"]"+" -> ");
             root.next.next = root;
             root.next = null;
             return  revlist;
@@ -181,5 +182,50 @@ public class LinkedListApp {
             }
             return prev;
         }
+    }
+
+    public Node reverseNode(Node root) {
+        if (root == null || root.next == null){
+            return null;
+        }else {
+            Node temp = reverseList(root.next);
+            root.next.next = root;
+            root.next = null;
+            return temp;
+        }
+        //return null;
+    }
+
+    public Node rotateListAnticlock(Node root, int i) {
+        if (root==null || root.next == null){
+            return root;
+        }else {
+            int k = findListSize(root);
+            i = i % k;
+            if (i==0){
+                return root;
+            }
+            Node node = root;
+            for (int j = 1; j < k-i ; j++) {
+                node = node.next;
+            }
+            Node temp = node.next;
+            Node head = temp;
+            node.next = null;
+            while (temp.next != null){
+                temp = temp.next;
+            }
+            temp.next = root;
+            printRoot(head);
+            return head;
+        }
+
+    }
+
+    private int findListSize(Node root) {
+        if (root == null){
+            return 0;
+        }else
+            return findListSize(root.next)+1;
     }
 }
