@@ -162,7 +162,7 @@ public class LinkedListApp {
             Node revlist = reverseList(root.next);
             printRoot(revlist);
             System.out.println();
-           // System.out.print("["+root.data+"]"+" -> ");
+            System.out.print("["+root.data+"]"+" -> ");
             root.next.next = root;
             root.next = null;
             return  revlist;
@@ -227,5 +227,42 @@ public class LinkedListApp {
             return 0;
         }else
             return findListSize(root.next)+1;
+    }
+
+    public Node findMiddleElement(Node root) {
+        if (null == root)
+            return root;
+        Node end = root;
+        Node start = root;
+        while (end != null && end.next != null){
+            start = start.next;
+            end = end.next.next;
+        }
+        return start;
+    }
+
+    public boolean checkLoop(Node root) {
+        Node loop = root;
+        Node temp = root.next.next;
+        while (loop.next != null){
+            loop = loop.next;
+        }
+        loop.next = temp;
+
+        boolean bool = isLoopExist(root);
+        return bool;
+    }
+
+    private boolean isLoopExist(Node loop) {
+        Node slow = loop;
+        Node fast = loop;
+        while (slow != null && fast != null && fast.next!= null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow){
+                return true;
+            }
+        }
+        return false;
     }
 }

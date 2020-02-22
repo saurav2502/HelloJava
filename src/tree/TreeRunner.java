@@ -12,10 +12,10 @@ public class TreeRunner {
         node = bsTapp.insertNode(node, 1);
         node = bsTapp.insertNode(node, 6);
         node = bsTapp.insertNode(node, 4);
-        node = bsTapp.insertNode(node, 6);
+        /*node = bsTapp.insertNode(node, 6);*/
         node = bsTapp.insertNode(node, 7);
-        node = bsTapp.deleteNode(node,8);
-        bsTapp.findRightNode(node);
+        node = bsTapp.deleteNode(node,3);
+        //bsTapp.findRightNode(node);
         //node = bsTapp.inOrderTraverse(node);
         //node = bsTapp.findParent(node, 8);
         /*if (node != null) {

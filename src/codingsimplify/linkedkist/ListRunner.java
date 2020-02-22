@@ -9,7 +9,11 @@ public class ListRunner {
         root = listApp.insert(root, 37);
         root = listApp.insert(root, 8);
         root = listApp.insert(root, 18);
-        /*listApp.printRoot(root);*/
+        root = listApp.insert(root, 10);
+        boolean b = listApp.checkLoop(root);
+        root = listApp.findMiddleElement(root);
+        System.out.println(root.data);
+        //listApp.printRoot(root);
         //inserting at beginning as 5
         /*root = listApp.insertAtBegining(root, 5);
         System.out.println("node inserted at begining");
@@ -28,8 +32,8 @@ public class ListRunner {
         /*boolean result = listApp.findElement(root,37);*/
         /*root = listApp.rotateList(root,8);*/
         /*root = listApp.rotateListAnticlock(root,8);*/
-        root = listApp.rotateAntiClock(root,2);
-        listApp.printRoot(root);
+        /*root = listApp.rotateAntiClock(root,2);
+        listApp.printRoot(root);*/
         /*System.out.println();*/
         /*root = listApp.reverseList(root);
         listApp.printRoot(root);*/
