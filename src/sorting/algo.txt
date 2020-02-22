@@ -1,0 +1,66 @@
+1. merge sort steps
+  a. find mid position of the given array.
+  b. devide the array in to two sub array {mid = lb+ub/2} ->
+      first array will be [arr,lb,mid],[arr,mid+1,ub].
+      repeat this step until one sub list should remain at last.
+      ex..
+      mergeSort(arr,lb,ub){
+          if(lb<ub){
+            mid = (lb+ub)/2;
+            mergeSort(arr,lb,mid);
+            mergeSort(arr,mid+1,ub)
+          }
+      }
+  c. merge the array as follows..
+     merge(arr,lb,mid,ub) {
+      ...to merge all element over here!
+      i = lb;
+      j = mid + 1;
+      k = lb;
+      int[] b = new int[];
+      while(i <= mid && j<=ub){
+        while(a[i] <= a[j]){
+          b[k] = a[i];
+          i++;
+        }
+        while(a[j] <= a[i]){
+           b[k] = a[j];
+           j++;
+         }
+          k++
+        }
+
+        if(i > mid){
+          while(j <= up){
+            b[k] = a[j];
+            j++;
+            k++;
+          }
+        }else{
+          while(i<=mid){
+            b[k] = a[i];
+            i++;
+            k++;
+          }
+        }
+      }
+     }
+  d. copy b[k] into a[k];
+  e. print the sorted array.
+
+2. QuickSort...
+  a. create one array.
+      int[] arr = new int[]{7, 6, 10, 5, 9, 2, 1, 15, 5};
+  b. create partition as follows..
+    b.1. choose pivot point like
+          int pivot = arr[lb];
+    b.2. elements which are less than pivot will be arrange left side and greater than pivot will be righter side!
+          as follows...{7, 6, 10, 5, 9, 2, 1, 15, 5};
+          while(pivot >= arr[start]
+           increment start position.
+          while(end >= pivot)
+           decrement end position.
+    b.3. if start < end then swap(arr[start],arr[end])
+    b.4. end while loop;
+  c. swap(arr[lb],arr[end]
+  d. print the sorted array!
